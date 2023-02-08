@@ -3,11 +3,13 @@ exampletile=Example Tile
 
 [object]
 exampleobject=Example Object
+spiderqueenobject=Spider Queen Trophy Display
 
 [item]
 exampleitem=Example Item
 examplesword=Example Sword
 examplestaff=Example Staff
+spiderqueenhead=Spider Queen Head
 
 [itemtooltip]
 examplestafftip=Shoots a homing, piercing projectile

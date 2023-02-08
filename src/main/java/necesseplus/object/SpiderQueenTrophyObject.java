@@ -12,16 +12,17 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
+import necesse.level.gameObject.furniture.FurnitureObject;
 
 import java.awt.*;
 import java.util.List;
 
-public class SpiderQueenTrophyObject extends GameObject {
+public class SpiderQueenTrophyObject extends FurnitureObject {
 
     private GameTexture texture;
 
     public SpiderQueenTrophyObject() {
-        super(new Rectangle(4, 4, 26, 26)); // Collision relative to the tile it's placed on
+        super(new Rectangle(0, 0, 32, 32)); // Collision relative to the tile it's placed on
         // Remember that tiles are 32x32 pixels in size
         hoverHitbox = new Rectangle(0, -32, 32, 64); // 2 tiles high mouse hover hitbox
         toolType = ToolType.ALL; // Can be broken by all tools
