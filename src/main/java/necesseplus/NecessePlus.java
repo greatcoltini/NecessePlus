@@ -26,35 +26,52 @@ public class NecessePlus {
 
         // Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
+        ObjectRegistry.registerObject("evilsprotectortrophyobject", new EvilsProtectorTrophyObject(), 175, true);
+        ObjectRegistry.registerObject("trophycaseobject", new TrophyCaseObject(), 20, true);
 
         // Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
+        ItemRegistry.registerItem("evilsprotectorhead" new EvilsProtectorHead(), 90, true);
+        ItemRegistry.registerItem("trophycase", new TrophyCase(), 20, true);
 
     }
-    
-
-    // public void initResources() {
-    //     ExampleMob.texture = GameTexture.fromFile("mobs/examplemob");
-    // }
 
     public void postInit() {
         // Add recipes
         // Show the recipe after example item recipe
-        // Example staff recipe, crafted in workstation using 4 example items and 10 gold bars
+        // Trophy Case
+        Recipes.registerModRecipe(new Recipe(
+            "trophycase",
+            1,
+            RecipeTechRegistry.WORKSTATION,
+            new Ingredient[]{
+                new Ingredient("oaklog", 5)
+            },
+            true
+        ));
+        // Spider Queen Trophy
         Recipes.registerModRecipe(new Recipe(
             "spiderqueentrophyobject",
             1,
             RecipeTechRegistry.NONE,
             new Ingredient[]{
                     new Ingredient("spiderqueenhead", 1),
-                    new Ingredient("oaklog", 5)
+                    new Ingredient("trophycase", 1)
             },
             false
         ));
-        // Add out example mob to default cave mobs.
-        // Spawn tables use a ticket/weight system. In general, common mobs have about 100 tickets.
-        // Biome.defaultCaveMobs
-        //         .add(100, "examplemob");
+        // Evils Protector Trophy
+        Recipes.registerModRecipe(new Recipe(
+            "evilsprotectortrophyobject",
+            1,
+            RecipeTechRegistry.NONE,
+            new Ingredient[]{
+                    new Ingredient("evilsprotectorhead", 1),
+                    new Ingredient("trophycase", 1)
+            },
+            false
+        ));
+
     }
 
 }
