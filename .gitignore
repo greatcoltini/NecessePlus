@@ -11,3 +11,6 @@ build
 # Project specific
 steam_appid.txt
 latest-crash.log
+
+# example stuff
+examples

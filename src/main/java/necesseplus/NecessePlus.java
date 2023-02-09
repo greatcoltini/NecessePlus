@@ -25,10 +25,10 @@ public class NecessePlus {
     public void init() {
 
         // Register out objects
-        ObjectRegistry.registerObject("spiderqueenobject", new SpiderQueenTrophyObject(), 2, true);
+        ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
 
         // Register our items
-        ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 10, true);
+        ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
 
     }
     
@@ -42,11 +42,12 @@ public class NecessePlus {
         // Show the recipe after example item recipe
         // Example staff recipe, crafted in workstation using 4 example items and 10 gold bars
         Recipes.registerModRecipe(new Recipe(
-            "spiderqueenobject",
+            "spiderqueentrophyobject",
             1,
             RecipeTechRegistry.NONE,
             new Ingredient[]{
-                    new Ingredient("spiderqueenhead", 1)
+                    new Ingredient("spiderqueenhead", 1),
+                    new Ingredient("oaklog", 5)
             },
             false
         ));
