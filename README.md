@@ -1,3 +1,8 @@
-An example mod for Necesse.
+A mod that plans to add some nice vanilla-themed additions to Necesse.
 
-Check out the [modding wiki page](https://necessewiki.com/Modding) for more.
+
+So far, we add:
+
+-- Trophy Placeables from new loot drops from the following bosses:
+ 1. Queen Spider - Spider Head (50% chance of drop)
+ 
