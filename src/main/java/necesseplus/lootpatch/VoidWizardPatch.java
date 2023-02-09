@@ -3,7 +3,7 @@ package necesseplus.lootpatch;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
-import necesse.entity.mobs.hostile.bosses.QueenSpiderMob;
+import necesse.entity.mobs.hostile.bosses.VoidWizard;
 import net.bytebuddy.asm.Advice;
 
 // /**
@@ -39,10 +39,10 @@ import net.bytebuddy.asm.Advice;
 //  *
 //  * "@Advice.Argument(n)" - The annotated parameter is mapped to the n argument passed into the target method.
 //  */
-@ModMethodPatch(target = QueenSpiderMob.class, name = "getLootTable", arguments = {})
-public class SpiderQueenPatch {
+@ModMethodPatch(target = VoidWizard.class, name = "getLootTable", arguments = {})
+public class VoidWizardPatch {
         @Advice.OnMethodExit
-        static void onExit(@Advice.This QueenSpiderMob queenSpiderMob, @Advice.Return LootTable lootTable) {
-            lootTable.items.add(new ChanceLootItem(0.5f, "spiderqueenhead"));
+        static void onExit(@Advice.This VoidWizard voidWizard, @Advice.Return LootTable lootTable) {
+            lootTable.items.add(new ChanceLootItem(0.5f, "voidwizardbeard"));
     }
 }

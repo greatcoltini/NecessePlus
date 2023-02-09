@@ -27,12 +27,14 @@ public class NecessePlus {
         // Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
         ObjectRegistry.registerObject("evilsprotectortrophyobject", new EvilsProtectorTrophyObject(), 175, true);
-        ObjectRegistry.registerObject("trophycaseobject", new TrophyCaseObject(), 20, true);
+        ObjectRegistry.registerObject("voidwizardtrophyobject", new VoidWizardTrophyObject(), 210, true);
+        ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
         // Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
-        ItemRegistry.registerItem("evilsprotectorhead" new EvilsProtectorHead(), 90, true);
-        ItemRegistry.registerItem("trophycase", new TrophyCase(), 20, true);
+        ItemRegistry.registerItem("evilsprotectorhead", new EvilsProtectorHead(), 90, true);
+        ItemRegistry.registerItem("voidwizardbeard", new VoidWizardBeard(), 110, true);
+        // ItemRegistry.registerItem("trophycaseitem", new TrophyCase(), 20, true);
 
     }
 
@@ -67,6 +69,17 @@ public class NecessePlus {
             RecipeTechRegistry.NONE,
             new Ingredient[]{
                     new Ingredient("evilsprotectorhead", 1),
+                    new Ingredient("trophycase", 1)
+            },
+            false
+        ));
+        // Void Wizard Trophy
+        Recipes.registerModRecipe(new Recipe(
+            "voidwizardtrophyobject",
+            1,
+            RecipeTechRegistry.NONE,
+            new Ingredient[]{
+                    new Ingredient("voidwizardbeard", 1),
                     new Ingredient("trophycase", 1)
             },
             false

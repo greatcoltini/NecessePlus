@@ -2,7 +2,6 @@ package necesseplus.lootpatch;
 
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.inventory.lootTable.LootTable;
-import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.entity.mobs.hostile.bosses.EvilsProtectorMob;
 import net.bytebuddy.asm.Advice;
@@ -43,7 +42,7 @@ import net.bytebuddy.asm.Advice;
 @ModMethodPatch(target = EvilsProtectorMob.class, name = "getLootTable", arguments = {})
 public class EvilsProtectorPatch {
         @Advice.OnMethodExit
-        static void onExit(@Advice.This EvilsProtectorMob queenSpiderMob, @Advice.Return LootTable lootTable) {
+        static void onExit(@Advice.This EvilsProtectorMob eProtectorMob, @Advice.Return LootTable lootTable) {
             lootTable.items.add(new ChanceLootItem(0.5f, "evilsprotectorhead"));
     }
 }

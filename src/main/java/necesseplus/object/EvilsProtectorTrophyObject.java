@@ -18,7 +18,7 @@ import necesse.level.gameObject.furniture.FurnitureObject;
 import java.awt.*;
 import java.util.List;
 
-public class EvilsProtectorTrophyObject extends GameObject {
+public class EvilsProtectorTrophyObject extends FurnitureObject {
 
     private GameTexture texture;
 

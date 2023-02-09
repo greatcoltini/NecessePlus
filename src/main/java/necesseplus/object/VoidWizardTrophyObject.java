@@ -18,11 +18,11 @@ import necesse.level.gameObject.furniture.FurnitureObject;
 import java.awt.*;
 import java.util.List;
 
-public class SpiderQueenTrophyObject extends FurnitureObject {
+public class VoidWizardTrophyObject extends FurnitureObject {
 
     private GameTexture texture;
 
-    public SpiderQueenTrophyObject() {
+    public VoidWizardTrophyObject() {
         super(new Rectangle(0, 0, 32, 32)); // Collision relative to the tile it's placed on
         this.rarity = Rarity.LEGENDARY;
         // Remember that tiles are 32x32 pixels in size
@@ -35,7 +35,7 @@ public class SpiderQueenTrophyObject extends FurnitureObject {
     @Override
     public void loadTextures() {
         super.loadTextures();
-        texture = GameTexture.fromFile("objects/spiderqueentrophyobject");
+        texture = GameTexture.fromFile("objects/voidwizardtrophyobject");
     }
 
     @Override
