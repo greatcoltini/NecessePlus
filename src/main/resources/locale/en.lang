@@ -4,12 +4,18 @@ exampletile=Example Tile
 [object]
 exampleobject=Example Object
 spiderqueentrophyobject=Spider Queen Trophy Display
+evilsprotectortrophyobject=Evil's Protector Trophy Display
+voidwizardtrophyobject=Void Wizard Trophy Display
+trophycase=Trophy Case
 
 [item]
 exampleitem=Example Item
 examplesword=Example Sword
 examplestaff=Example Staff
 spiderqueenhead=Spider Queen Head
+evilsprotectorhead=Evils' Protector Head
+voidwizardbeard=Void Wizard Beard
+trophycaseitem=Trophy Case
 
 [itemtooltip]
 examplestafftip=Shoots a homing, piercing projectile

@@ -40,7 +40,7 @@ public class NecessePlus {
 
     public void postInit() {
         // Add recipes
-        // Show the recipe after example item recipe
+
         // Trophy Case
         Recipes.registerModRecipe(new Recipe(
             "trophycase",
@@ -51,33 +51,36 @@ public class NecessePlus {
             },
             true
         ));
+
         // Spider Queen Trophy
         Recipes.registerModRecipe(new Recipe(
             "spiderqueentrophyobject",
             1,
-            RecipeTechRegistry.NONE,
+            RecipeTechRegistry.CARPENTER,
             new Ingredient[]{
                     new Ingredient("spiderqueenhead", 1),
                     new Ingredient("trophycase", 1)
             },
             false
         ));
+
         // Evils Protector Trophy
         Recipes.registerModRecipe(new Recipe(
             "evilsprotectortrophyobject",
             1,
-            RecipeTechRegistry.NONE,
+            RecipeTechRegistry.CARPENTER,
             new Ingredient[]{
                     new Ingredient("evilsprotectorhead", 1),
                     new Ingredient("trophycase", 1)
             },
             false
         ));
+
         // Void Wizard Trophy
         Recipes.registerModRecipe(new Recipe(
             "voidwizardtrophyobject",
             1,
-            RecipeTechRegistry.NONE,
+            RecipeTechRegistry.CARPENTER,
             new Ingredient[]{
                     new Ingredient("voidwizardbeard", 1),
                     new Ingredient("trophycase", 1)
