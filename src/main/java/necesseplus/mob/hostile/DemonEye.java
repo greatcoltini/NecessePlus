@@ -22,19 +22,20 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.List;
 
-public class EyeBoss extends HostileMob {
+public class DemonEye extends HostileMob {
 
     // Loaded in examplemod.ExampleMod.initResources()
     public static GameTexture texture;
 
     public static LootTable lootTable = new LootTable(
-            ChanceLootItem.between(0.5f, "coin", 100, 300) // 50% chance to drop between 1-3 example items
+            ChanceLootItem.between(0.5f, "coin", 1, 3),
+            ChanceLootItem.between(0.2f, "lens", 1, 1) // 50% chance to drop between 1-3 example items
     );
 
     // MUST HAVE an empty constructor
-    public EyeBoss() {
-        super(200);
-        setSpeed(50);
+    public DemonEye() {
+        super(80);
+        setSpeed(60);
         setFriction(3);
 
         // Hitbox, collision box, and select box (for hovering)
@@ -47,7 +48,7 @@ public class EyeBoss extends HostileMob {
     public void init() {
         super.init();
         // Setup AI
-        ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, new GameDamage(25), 25, 40000));
+        ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, new GameDamage(10), 25, 40000));
     }
 
     @Override

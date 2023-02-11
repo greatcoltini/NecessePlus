@@ -22,7 +22,7 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.List;
 
-public class EyeBoss extends HostileMob {
+public class EyeOfCthulu extends HostileMob {
 
     // Loaded in examplemod.ExampleMod.initResources()
     public static GameTexture texture;
@@ -32,7 +32,7 @@ public class EyeBoss extends HostileMob {
     );
 
     // MUST HAVE an empty constructor
-    public EyeBoss() {
+    public EyeOfCthulu() {
         super(200);
         setSpeed(50);
         setFriction(3);

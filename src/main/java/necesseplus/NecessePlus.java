@@ -32,6 +32,7 @@ public class NecessePlus {
         ObjectRegistry.registerObject("ancientvulturetrophyobject", new AncientVultureTrophyObject(), 235, true);
         ObjectRegistry.registerObject("swampguardiantrophyobject", new SwampGuardianTrophyObject(), 235, true);
         ObjectRegistry.registerObject("piratecaptaintrophyobject", new PirateCaptainTrophyObject(), 225, true);
+        ObjectRegistry.registerObject("demoneyebanner", new DemonEyeBanner(), 45, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
         // Register our items
@@ -41,6 +42,7 @@ public class NecessePlus {
         ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
+        ItemRegistry.registerItem("lens", new Lens(), 10, true);
 
         // Register our mob
         MobRegistry.registerMob("demoneye", DemonEye.class, true);
@@ -74,7 +76,7 @@ public class NecessePlus {
                     new Ingredient("spiderqueenhead", 1),
                     new Ingredient("trophycase", 1)
             },
-            false
+            true
         ));
 
         // Evils Protector Trophy
@@ -86,7 +88,7 @@ public class NecessePlus {
                     new Ingredient("evilsprotectorhead", 1),
                     new Ingredient("trophycase", 1)
             },
-            false
+            true
         ));
 
         // Void Wizard Trophy
@@ -98,7 +100,7 @@ public class NecessePlus {
                     new Ingredient("voidwizardbeard", 1),
                     new Ingredient("trophycase", 1)
             },
-            false
+            true
         ));
 
         // Swamp Guardian Trophy
@@ -110,7 +112,7 @@ public class NecessePlus {
                     new Ingredient("swampguardianskin", 1),
                     new Ingredient("trophycase", 1)
             },
-            false
+            true
         ));
 
         // Ancient Vulture Trophy
@@ -122,7 +124,7 @@ public class NecessePlus {
                     new Ingredient("ancientvulturehead", 1),
                     new Ingredient("trophycase", 1)
             },
-            false
+            true
         ));
 
         // Pirate Captain Trophy
@@ -134,8 +136,23 @@ public class NecessePlus {
                     new Ingredient("piratecaptainflag", 1),
                     new Ingredient("trophycase", 1)
             },
+            true
+        ));
+
+        // Demon Eye Banner
+        Recipes.registerModRecipe(new Recipe(
+            "demoneyebanner",
+            1,
+            RecipeTechRegistry.CARPENTER,
+            new Ingredient[]{
+                    new Ingredient("lens", 5),
+                    new Ingredient("oaklog", 5)
+            },
             false
         ));
+
+        // add mob spawn
+        Biome.defaultSurfaceMobs.add(60, "demoneye");
 
 
     }
