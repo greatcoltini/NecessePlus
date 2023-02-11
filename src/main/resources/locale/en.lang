@@ -6,6 +6,9 @@ exampleobject=Example Object
 spiderqueentrophyobject=Spider Queen Trophy Display
 evilsprotectortrophyobject=Evil's Protector Trophy Display
 voidwizardtrophyobject=Void Wizard Trophy Display
+ancientvulturetrophyobject=Ancient Vulture Trophy Display
+piratecaptaintrophyobject=Pirate Captain Trophy Display
+swampguardiantrophyobject=Swamp Guardian Trophy Display
 trophycase=Trophy Case
 
 [item]
@@ -15,6 +18,9 @@ examplestaff=Example Staff
 spiderqueenhead=Spider Queen Head
 evilsprotectorhead=Evils' Protector Head
 voidwizardbeard=Void Wizard Beard
+ancienttvulturehead=Ancient Vulture Head
+swampguardianskin=Swamp Guardian Skin
+piratecaptainflag=Pirate Captain's Flag
 trophycaseitem=Trophy Case
 
 [itemtooltip]

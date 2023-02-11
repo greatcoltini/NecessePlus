@@ -28,12 +28,18 @@ public class NecessePlus {
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
         ObjectRegistry.registerObject("evilsprotectortrophyobject", new EvilsProtectorTrophyObject(), 175, true);
         ObjectRegistry.registerObject("voidwizardtrophyobject", new VoidWizardTrophyObject(), 210, true);
+        ObjectRegistry.registerObject("ancientvulturetrophyobject", new AncientVultureTrophyObject(), 235, true);
+        ObjectRegistry.registerObject("swampguardiantrophyobject", new SwampGuardianTrophyObject(), 235, true);
+        ObjectRegistry.registerObject("piratecaptaintrophyobject", new PirateCaptainTrophyObject(), 225, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
         // Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
         ItemRegistry.registerItem("evilsprotectorhead", new EvilsProtectorHead(), 90, true);
         ItemRegistry.registerItem("voidwizardbeard", new VoidWizardBeard(), 110, true);
+        ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
+        ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
+        ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
         // ItemRegistry.registerItem("trophycaseitem", new TrophyCase(), 20, true);
 
     }
@@ -87,6 +93,43 @@ public class NecessePlus {
             },
             false
         ));
+
+        // Swamp Guardian Trophy
+        Recipes.registerModRecipe(new Recipe(
+            "swampguardiantrophyobject",
+            1,
+            RecipeTechRegistry.CARPENTER,
+            new Ingredient[]{
+                    new Ingredient("swampguardianskin", 1),
+                    new Ingredient("trophycase", 1)
+            },
+            false
+        ));
+
+        // Ancient Vulture Trophy
+        Recipes.registerModRecipe(new Recipe(
+            "ancientvulturetrophyobject",
+            1,
+            RecipeTechRegistry.CARPENTER,
+            new Ingredient[]{
+                    new Ingredient("ancientvulturehead", 1),
+                    new Ingredient("trophycase", 1)
+            },
+            false
+        ));
+
+        // Pirate Captain Trophy
+        Recipes.registerModRecipe(new Recipe(
+            "piratecaptaintrophyobject",
+            1,
+            RecipeTechRegistry.CARPENTER,
+            new Ingredient[]{
+                    new Ingredient("piratecaptainflag", 1),
+                    new Ingredient("trophycase", 1)
+            },
+            false
+        ));
+
 
     }
 
