@@ -25,6 +25,10 @@ trophycaseitem=Trophy Case
 
 [itemtooltip]
 examplestafftip=Shoots a homing, piercing projectile
+piratecaptainflagtip=Some say it still smells of the old sailor...
+swampguardianskintip=Disgusting.
+voidwizardbeardtip=I wonder if we could weaponize this?
+ancientvultureheadtip=Caw Caw!
 
 [mob]
 examplemob=Example Mob

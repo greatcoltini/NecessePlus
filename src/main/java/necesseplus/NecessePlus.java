@@ -40,7 +40,6 @@ public class NecessePlus {
         ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
-        // ItemRegistry.registerItem("trophycaseitem", new TrophyCase(), 20, true);
 
     }
 
