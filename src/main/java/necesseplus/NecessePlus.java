@@ -3,6 +3,7 @@ package necesseplus;
 import necesseplus.item.*;
 import necesseplus.object.*;
 import necesseplus.lootpatch.*;
+import necesseplus.mob.hostile.*;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -41,6 +42,13 @@ public class NecessePlus {
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
 
+        // Register our mob
+        MobRegistry.registerMob("demoneye", DemonEye.class, true);
+
+    }
+
+    public void initResources() {
+        DemonEye.texture = GameTexture.fromFile("mobs/demoneyesheet");
     }
 
     public void postInit() {
