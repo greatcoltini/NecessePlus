@@ -33,7 +33,7 @@ public class NecessePlus {
         ObjectRegistry.registerObject("ancientvulturetrophyobject", new AncientVultureTrophyObject(), 235, true);
         ObjectRegistry.registerObject("swampguardiantrophyobject", new SwampGuardianTrophyObject(), 235, true);
         ObjectRegistry.registerObject("piratecaptaintrophyobject", new PirateCaptainTrophyObject(), 225, true);
-        ObjectRegistry.registerObject("demoneyebanner", new DemonEyeBanner(), 45, true);
+        ObjectRegistry.registerObject("demoneyebannerstand", new DemonEyeBannerStand(), 45, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
         // Register our items
@@ -43,6 +43,7 @@ public class NecessePlus {
         ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
+        ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(), 50, true);
         ItemRegistry.registerItem("lens", new Lens(), 10, true);
 
         // Register our mob
@@ -144,14 +145,25 @@ public class NecessePlus {
 
         // Demon Eye Banner
         Recipes.registerModRecipe(new Recipe(
-            "demoneyebanner",
+            "demoneyebannerstand",
             1,
             RecipeTechRegistry.CARPENTER,
             new Ingredient[]{
-                    new Ingredient("lens", 5),
+                    new Ingredient("demoneyebanner", 1),
                     new Ingredient("oaklog", 5)
             },
             false
+        ));
+
+        // recipe for handheld banner demon eye
+        Recipes.registerModRecipe(new Recipe(
+            "demoneyebanner",
+            1,
+            RecipeTechRegistry.WORKSTATION,
+            new Ingredient[] {
+                new Ingredient("lens", 5)
+            },
+            true
         ));
 
         // add mob spawn

@@ -13,16 +13,16 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import necesse.level.gameObject.furniture.FurnitureObject;
+import necesse.level.gameObject.BannerStandObject;
 
 import java.awt.*;
 import java.util.List;
 
-public class DemonEyeBanner extends FurnitureObject {
+public class DemonEyeBannerStand extends GameObject{
 
     private GameTexture texture;
 
-    public DemonEyeBanner() {
+    public DemonEyeBannerStand() {
         super(new Rectangle(0, 0, 32, 32)); // Collision relative to the tile it's placed on
         this.rarity = Rarity.LEGENDARY;
         // Remember that tiles are 32x32 pixels in size
