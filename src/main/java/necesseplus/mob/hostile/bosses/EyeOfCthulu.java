@@ -7,7 +7,7 @@ import necesse.entity.mobs.MobDrawable;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
-import necesse.entity.mobs.hostile.HostileMob;
+import necesse.entity.mobs.hostile.bosses.FlyingBossMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -22,7 +22,7 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.List;
 
-public class EyeOfCthulu extends HostileMob {
+public class EyeOfCthulu extends FlyingBossMob {
 
     // Loaded in examplemod.ExampleMod.initResources()
     public static GameTexture texture;
@@ -38,9 +38,9 @@ public class EyeOfCthulu extends HostileMob {
         setFriction(3);
 
         // Hitbox, collision box, and select box (for hovering)
-        collision = new Rectangle(-10, -7, 20, 14);
-        hitBox = new Rectangle(-14, -12, 28, 24);
-        selectBox = new Rectangle(-14, -7 - 34, 28, 48);
+        this.collision = new Rectangle(-55, -90, 110, 110);
+        this.hitBox = new Rectangle(-55, -90, 110, 110);
+        this.selectBox = new Rectangle(-75, -110, 150, 130);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class EyeOfCthulu extends HostileMob {
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
         DrawOptions drawOptions = texture.initDraw()
-                .sprite(sprite.x, sprite.y, 64)
+                .sprite(sprite.x, sprite.y, 110, 110)
                 .light(light)
                 .pos(drawX, drawY);
 

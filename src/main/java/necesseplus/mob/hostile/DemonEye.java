@@ -7,7 +7,7 @@ import necesse.entity.mobs.MobDrawable;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
-import necesse.entity.mobs.hostile.HostileMob;
+import necesse.entity.mobs.hostile.FlyingHostileMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -22,7 +22,7 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.List;
 
-public class DemonEye extends HostileMob {
+public class DemonEye extends FlyingHostileMob {
 
     // Loaded in examplemod.ExampleMod.initResources()
     public static GameTexture texture;

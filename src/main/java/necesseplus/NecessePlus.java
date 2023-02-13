@@ -4,6 +4,7 @@ import necesseplus.item.*;
 import necesseplus.object.*;
 import necesseplus.lootpatch.*;
 import necesseplus.mob.hostile.*;
+import necesseplus.mob.hostile.bosses.EyeOfCthulu;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -46,11 +47,13 @@ public class NecessePlus {
 
         // Register our mob
         MobRegistry.registerMob("demoneye", DemonEye.class, true);
+        MobRegistry.registerMob("eyeofcthulu", EyeOfCthulu.class, true);
 
     }
 
     public void initResources() {
         DemonEye.texture = GameTexture.fromFile("mobs/demoneyesheet");
+        EyeOfCthulu.texture = GameTexture.fromFile("mobs/eyeofcthulusheet2");
     }
 
     public void postInit() {
