@@ -15,7 +15,9 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
+import necesse.engine.registries.BuffRegistry;
 import necesse.level.maps.light.GameLight;
+import necesseplus.mobs.buffs.staticbuffs.*;
 
 public class DemonEyeBanner extends Item {
   public Function<Mob, Buff> buff;
@@ -26,12 +28,13 @@ public class DemonEyeBanner extends Item {
   
   public boolean buffsMobs = false;
 
-  public DemonEyeBanner()
+  public DemonEyeBanner(Item.Rarity rarity, int range, Function<Mob, Buff> buff)
   {
     super(1);
     this.rarity = Rarity.COMMON;
     this.range = 32;
     this.worldDrawSize = 32;
+    this.buff = buff;
     setItemCategory((new String[] {"equipment", "banners"}));
   }  
   

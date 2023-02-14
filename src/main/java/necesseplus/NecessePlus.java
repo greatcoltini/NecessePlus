@@ -5,6 +5,7 @@ import necesseplus.object.*;
 import necesseplus.lootpatch.*;
 import necesseplus.mob.hostile.*;
 import necesseplus.mob.hostile.bosses.EyeOfCthulu;
+import necesseplus.mobs.buffs.staticbuffs.*;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -20,6 +21,7 @@ import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.RecipeTechRegistry;
+import necesse.inventory.item.Item.Rarity;
 
 @ModEntry
 public class NecessePlus {
@@ -36,6 +38,9 @@ public class NecessePlus {
         ObjectRegistry.registerObject("demoneyebannerstand", new DemonEyeBannerStand(), 45, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
+        // register buffs
+        BuffRegistry.registerBuff("demoneyebanner", new DemonEyeBannerBuff());
+
         // Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
         ItemRegistry.registerItem("evilsprotectorhead", new EvilsProtectorHead(), 90, true);
@@ -43,7 +48,7 @@ public class NecessePlus {
         ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
-        ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(), 50, true);
+        ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(Rarity.COMMON, 480, "demoneyebanner"), 200.0F, true);
         ItemRegistry.registerItem("lens", new Lens(), 10, true);
 
         // Register our mob
