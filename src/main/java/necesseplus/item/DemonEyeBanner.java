@@ -69,16 +69,16 @@ public class DemonEyeBanner extends BannerItem{
     } 
   }
   
-  // public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
-  //   int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (tileX * 97) + (tileY * 151), 4, 800);
-  //   int xOffset = 0, yOffset = 0, holdSpriteRes = 64;
-  //   if (this.holdTexture.getWidth() / 128 == 6) {
-  //     xOffset = -32;
-  //     yOffset = -32;
-  //     holdSpriteRes = 128;
-  //   } 
-  //   return (DrawOptions)this.holdTexture.initDraw().sprite(1 + anim, 3, holdSpriteRes).light(light).pos(drawX - 9 + xOffset, drawY - 40 + yOffset + ((anim == 1 || anim == 3) ? 2 : 0));
-  // }
+  public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
+    int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (tileX * 97) + (tileY * 151), 4, 800);
+    int xOffset = 0, yOffset = 0, holdSpriteRes = 64;
+    if (this.holdTexture.getWidth() / 128 == 6) {
+      xOffset = -32;
+      yOffset = -32;
+      holdSpriteRes = 128;
+    } 
+    return (DrawOptions)this.holdTexture.initDraw().sprite(1 + anim, 3, holdSpriteRes).light(light).pos(drawX - 9 + xOffset, drawY - 40 + yOffset + ((anim == 1 || anim == 3) ? 2 : 0));
+  }
   
   public String canAttack(Level level, int x, int y, PlayerMob player, InventoryItem item) {
     return "";
