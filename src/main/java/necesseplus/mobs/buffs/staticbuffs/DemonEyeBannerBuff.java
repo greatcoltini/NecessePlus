@@ -8,7 +8,7 @@ import necesse.entity.mobs.buffs.staticBuffs.VicinityBuff;
 
 public class DemonEyeBannerBuff extends VicinityBuff {
     public void init(ActiveBuff buff) {
-      buff.setModifier(BuffModifiers.SPEED, Float.valueOf(0.15F));
+      buff.setModifier(BuffModifiers.SPEED, Float.valueOf(0.35F));
     }
     
     public void updateLocalDisplayName() {

@@ -43,7 +43,7 @@ public class NecessePlus {
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
         // register buffs
-        DemonEyeBannerBuff itemBuff = BuffRegistry.registerBuff("demoneyebanner", new DemonEyeBannerBuff());
+        BuffRegistry.registerBuff("demoneyebanner", new DemonEyeBannerBuff());
 
         // Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
@@ -52,7 +52,7 @@ public class NecessePlus {
         ItemRegistry.registerItem("piratecaptainflag", new PirateCaptainFlag(), 100, true);
         ItemRegistry.registerItem("swampguardianskin", new SwampGuardianSkin(), 90, true);
         ItemRegistry.registerItem("ancientvulturehead", new AncientVultureHead(), 110, true);
-        ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(Rarity.COMMON, 480, itemBuff), 200.0F, true);
+        ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(BuffRegistry.getBuff("demoneyebanner")), 200.0F, true);
         ItemRegistry.registerItem("lens", new Lens(), 10, true);
 
         // Register our mob

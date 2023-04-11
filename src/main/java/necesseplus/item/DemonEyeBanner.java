@@ -9,17 +9,19 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
+import necesse.entity.mobs.buffs.staticBuffs.StaminaBuff;
 import necesse.entity.pickup.ItemPickupEntity;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.miscItem.BannerItem;
 import necesse.level.maps.Level;
 import necesse.engine.registries.BuffRegistry;
 import necesse.level.maps.light.GameLight;
 import necesseplus.mobs.buffs.staticbuffs.*;
 
-public class DemonEyeBanner extends Item {
+public class DemonEyeBanner extends BannerItem{
   public Function<Mob, Buff> buff;
   
   public int range;
@@ -28,13 +30,25 @@ public class DemonEyeBanner extends Item {
   
   public boolean buffsMobs = false;
 
-  public DemonEyeBanner(Item.Rarity rarity, int range, Function<Mob, Buff> buff)
+  // public DemonEyeBanner(Buff buff)
+  // {
+  //   super(1);
+  //   this.rarity = Rarity.COMMON;
+  //   this.range = 32;
+  //   this.worldDrawSize = 32;
+  //   // this.buff = m -> BuffRegistry.Banners.SPEED;
+  //   this.buff = m -> buff;
+  //   setItemCategory((new String[] {"equipment", "banners"}));
+  // }  
+
+  public DemonEyeBanner(Buff buff)
   {
-    super(1);
+    super(Rarity.COMMON, 32, m -> buff);
     this.rarity = Rarity.COMMON;
     this.range = 32;
     this.worldDrawSize = 32;
-    this.buff = buff;
+    // this.buff = m -> BuffRegistry.Banners.SPEED;
+    this.buff = m -> buff;
     setItemCategory((new String[] {"equipment", "banners"}));
   }  
   
@@ -55,16 +69,16 @@ public class DemonEyeBanner extends Item {
     } 
   }
   
-  public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
-    int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (tileX * 97) + (tileY * 151), 4, 800);
-    int xOffset = 0, yOffset = 0, holdSpriteRes = 64;
-    if (this.holdTexture.getWidth() / 128 == 6) {
-      xOffset = -32;
-      yOffset = -32;
-      holdSpriteRes = 128;
-    } 
-    return (DrawOptions)this.holdTexture.initDraw().sprite(1 + anim, 3, holdSpriteRes).light(light).pos(drawX - 9 + xOffset, drawY - 40 + yOffset + ((anim == 1 || anim == 3) ? 2 : 0));
-  }
+  // public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
+  //   int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (tileX * 97) + (tileY * 151), 4, 800);
+  //   int xOffset = 0, yOffset = 0, holdSpriteRes = 64;
+  //   if (this.holdTexture.getWidth() / 128 == 6) {
+  //     xOffset = -32;
+  //     yOffset = -32;
+  //     holdSpriteRes = 128;
+  //   } 
+  //   return (DrawOptions)this.holdTexture.initDraw().sprite(1 + anim, 3, holdSpriteRes).light(light).pos(drawX - 9 + xOffset, drawY - 40 + yOffset + ((anim == 1 || anim == 3) ? 2 : 0));
+  // }
   
   public String canAttack(Level level, int x, int y, PlayerMob player, InventoryItem item) {
     return "";
