@@ -7,6 +7,7 @@ import necesseplus.lootpatch.*;
 import necesseplus.mob.hostile.*;
 import necesseplus.mob.hostile.bosses.EyeOfCthulu;
 import necesseplus.mobs.buffs.staticbuffs.*;
+import necesseplus.biomes.corruption.*;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -32,7 +33,7 @@ public class NecessePlus {
 
     public void init() {
 
-        // Register out objects
+        // 2 Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
         ObjectRegistry.registerObject("evilsprotectortrophyobject", new EvilsProtectorTrophyObject(), 175, true);
         ObjectRegistry.registerObject("voidwizardtrophyobject", new VoidWizardTrophyObject(), 210, true);
@@ -42,10 +43,14 @@ public class NecessePlus {
         ObjectRegistry.registerObject("demoneyebannerstand", new DemonEyeBannerStand(), 45, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
 
-        // register buffs
+        // 3 register biome
+
+        BiomeRegistry.registerBiome("corruptionbiome", new CorruptionBiome(), 600, "forest");
+
+        // 4 register buffs
         BuffRegistry.registerBuff("demoneyebanner", new DemonEyeBannerBuff());
 
-        // Register our items
+        // 7 Register our items
         ItemRegistry.registerItem("spiderqueenhead", new SpiderQueenHead(), 100, true);
         ItemRegistry.registerItem("evilsprotectorhead", new EvilsProtectorHead(), 90, true);
         ItemRegistry.registerItem("voidwizardbeard", new VoidWizardBeard(), 110, true);
@@ -55,9 +60,14 @@ public class NecessePlus {
         ItemRegistry.registerItem("demoneyebanner", new DemonEyeBanner(BuffRegistry.getBuff("demoneyebanner")), 200.0F, true);
         ItemRegistry.registerItem("lens", new Lens(), 10, true);
 
-        // Register our mob
+        // 9 Register our mob
         MobRegistry.registerMob("demoneye", DemonEye.class, true);
         MobRegistry.registerMob("eyeofcthulu", EyeOfCthulu.class, true);
+
+        // 11 register level generators
+        LevelRegistry.registerLevel("corruptionsurface", CorruptionSurfaceLevel.class);
+        LevelRegistry.registerLevel("corruptioncave", CorruptionCaveLevel.class);
+        LevelRegistry.registerLevel("corruptiondeepcave", CorruptionDeepCaveLevel.class);
 
     }
 
