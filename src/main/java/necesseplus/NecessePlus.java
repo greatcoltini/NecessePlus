@@ -1,5 +1,6 @@
 package necesseplus;
 
+import java.awt.Color;
 import necesseplus.item.*;
 import necesseplus.object.*;
 import net.bytebuddy.dynamic.TypeResolutionStrategy.Active;
@@ -8,6 +9,7 @@ import necesseplus.mob.hostile.*;
 import necesseplus.mob.hostile.bosses.EyeOfCthulu;
 import necesseplus.mobs.buffs.staticbuffs.*;
 import necesseplus.biomes.corruption.*;
+import necesseplus.gameTile.CorruptGrassTile;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -27,11 +29,18 @@ import necesse.inventory.item.Item.Rarity;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.VicinityBuff;
+import necesse.level.gameTile.GameTile;
+import necesse.level.gameTile.SimpleFloorTile;
+import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.TreeObject;
 
 @ModEntry
 public class NecessePlus {
 
     public void init() {
+
+        // 1 Register tiles
+        TileRegistry.registerTile("corruptgrasstile", (GameTile)new CorruptGrassTile(), 0.0F, false);
 
         // 2 Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
@@ -42,6 +51,7 @@ public class NecessePlus {
         ObjectRegistry.registerObject("piratecaptaintrophyobject", new PirateCaptainTrophyObject(), 225, true);
         ObjectRegistry.registerObject("demoneyebannerstand", new DemonEyeBannerStand(), 45, true);
         ObjectRegistry.registerObject("trophycase", new TrophyCase(), 20, true);
+        ObjectRegistry.registerObject("corrupttree", (GameObject)new TreeObject("corrupttree", "corruptlog", "corruptsapling", new Color(203, 195, 227), 45, 60, 110, "corruptleaves"), 0.0F, false);
 
         // 3 register biome
 

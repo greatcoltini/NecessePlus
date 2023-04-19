@@ -64,10 +64,10 @@ public class CorruptionCaveLevel extends Level {
     int trackObject = ObjectRegistry.getObjectID("minecarttrack");
     LinkedList<Mob> minecartsGenerated = new LinkedList<>();
     GameEvents.triggerEvent((PreventableGameEvent)new GenerateCaveMiniBiomesEvent(this, cg), e -> {
-          GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.01F, 5, 7.0F, 15.0F, 3.0F, 5.0F, ()); 
-          GenerationTools.generateRandomPoints(this, cg.random, 0.01F, 15, ());
+        //   GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.01F, 5, 7.0F, 15.0F, 3.0F, 5.0F, ()); 
+        //   GenerationTools.generateRandomPoints(this, cg.random, 0.01F, 15, ());
           AtomicInteger cryptRotation = new AtomicInteger();
-          GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.015F, 2, 3.0F, 5.0F, 8.0F, 10.0F, ());
+        //   GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.015F, 2, 3.0F, 5.0F, 8.0F, 10.0F, ());
           GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.02F, 2, 2.0F, 10.0F, 2.0F, 4.0F, TileRegistry.getTileID("lavatile"), 1.0F, true);
           GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.02F, 2, 2.0F, 10.0F, 2.0F, 4.0F, TileRegistry.getTileID("watertile"), 1.0F, true);
           this.liquidManager.calculateShores();

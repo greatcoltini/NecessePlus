@@ -37,7 +37,7 @@ public class CorruptionSurfaceLevel extends Level {
     IslandGeneration ig = new IslandGeneration(this, size);
     int waterTile = TileRegistry.getTileID("watertile");
     int sandTile = TileRegistry.getTileID("sandtile");
-    int grassTile = TileRegistry.grassID;
+    int grassTile = TileRegistry.getTileID("corruptgrasstile");
     GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandLayoutEvent(this, islandSize, ig), e -> {
           ig.generateSimpleIsland(this.width / 2, this.height / 2, waterTile, grassTile, sandTile);
           ig.generateRiver(waterTile, grassTile, sandTile);
@@ -46,11 +46,9 @@ public class CorruptionSurfaceLevel extends Level {
         });
     GameEvents.triggerEvent((GameEvent)new GeneratedIslandLayoutEvent(this, islandSize, ig));
     GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandFloraEvent(this, islandSize, ig), e -> {
-          int oakTree = ObjectRegistry.getObjectID("oaktree");
-          int spruceTree = ObjectRegistry.getObjectID("sprucetree");
+          int corruptTree = ObjectRegistry.getObjectID("corrupttree");
           int grassObject = ObjectRegistry.getObjectID("grass");
-          ig.generateCellMapObjects(0.32F, oakTree, grassTile, 0.03F);
-          ig.generateCellMapObjects(0.32F, spruceTree, grassTile, 0.05F);
+          ig.generateCellMapObjects(0.32F, corruptTree, grassTile, 0.07F);
           ig.generateObjects(grassObject, grassTile, 0.2F);
           ig.generateObjects(ObjectRegistry.getObjectID("surfacerock"), -1, 0.001F, false);
           ig.generateObjects(ObjectRegistry.getObjectID("surfacerocksmall"), -1, 0.002F, false);
