@@ -14,6 +14,10 @@ import necesse.level.maps.biomes.FishingSpot;
 import necesse.level.maps.biomes.MobSpawnTable;
 
 public class CorruptionBiome extends Biome {
+
+  public static MobSpawnTable defaultSurfaceCritters = (new MobSpawnTable())
+    .add(100, "eater");
+  
   public static MobSpawnTable caveCritters = (new MobSpawnTable())
     .include(Biome.defaultCaveCritters)
     .add(100, "stonecaveling");
@@ -47,7 +51,7 @@ public class CorruptionBiome extends Biome {
         return deepCaveCritters; 
       return caveCritters;
     } 
-    return super.getCritterSpawnTable(level);
+    return defaultSurfaceCritters;
   }
   
   public FishingLootTable getFishingLootTable(FishingSpot spot) {

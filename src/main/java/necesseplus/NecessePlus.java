@@ -9,7 +9,7 @@ import necesseplus.mob.hostile.*;
 import necesseplus.mob.hostile.bosses.EyeOfCthulu;
 import necesseplus.mobs.buffs.staticbuffs.*;
 import necesseplus.biomes.corruption.*;
-import necesseplus.gameTile.CorruptGrassTile;
+import necesseplus.gameTile.*;
 import necesse.engine.commands.CommandsManager;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -41,6 +41,8 @@ public class NecessePlus {
 
         // 1 Register tiles
         TileRegistry.registerTile("corruptgrasstile", (GameTile)new CorruptGrassTile(), 0.0F, false);
+        TileRegistry.registerTile("corruptsandtile", (GameTile)new CorruptSandTile(), 0.0F, false);
+                
 
         // 2 Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
@@ -72,6 +74,7 @@ public class NecessePlus {
         // 9 Register our mob
         MobRegistry.registerMob("demoneye", DemonEye.class, true);
         MobRegistry.registerMob("eyeofcthulu", EyeOfCthulu.class, true);
+        MobRegistry.registerMob("eater", Eater.class, true);
 
         // 11 register level generators
         LevelRegistry.registerLevel("corruptionsurface", CorruptionSurfaceLevel.class);
@@ -83,6 +86,7 @@ public class NecessePlus {
     public void initResources() {
         DemonEye.texture = GameTexture.fromFile("mobs/demoneyesheet");
         EyeOfCthulu.texture = GameTexture.fromFile("mobs/eyeofcthulusheet2");
+        Eater.texture = GameTexture.fromFile("mobs/eatersheet");
     }
 
     public void postInit() {

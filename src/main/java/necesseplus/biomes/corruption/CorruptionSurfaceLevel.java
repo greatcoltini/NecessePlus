@@ -33,10 +33,10 @@ public class CorruptionSurfaceLevel extends Level {
   }
   
   public void generateLevel(float islandSize) {
-    int size = (int)(islandSize * 100.0F) + 20;
+    int size = (int)(islandSize * 200.0F) + 20;
     IslandGeneration ig = new IslandGeneration(this, size);
     int waterTile = TileRegistry.getTileID("watertile");
-    int sandTile = TileRegistry.getTileID("sandtile");
+    int sandTile = TileRegistry.getTileID("corruptsandtile");
     int grassTile = TileRegistry.getTileID("corruptgrasstile");
     GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandLayoutEvent(this, islandSize, ig), e -> {
           ig.generateSimpleIsland(this.width / 2, this.height / 2, waterTile, grassTile, sandTile);
