@@ -41,18 +41,18 @@ public class CorruptGrassTile extends TerrainSplatterTile {
     return spreadChance;
   }
   
-  public void tick(Level level, int x, int y) {
-    if (!level.isServerLevel())
-      return; 
-    if (level.getObjectID(x, y) == 0 && 
-      GameRandom.globalRandom.getChance(growChance)) {
-      GameObject grass = ObjectRegistry.getObject(ObjectRegistry.getObjectID("corruptgrass"));
-      if (grass.canPlace(level, x, y, 0) == null) {
-        grass.placeObject(level, x, y, 0);
-        level.sendObjectUpdatePacket(x, y);
-      } 
-    } 
-  }
+  // public void tick(Level level, int x, int y) {
+  //   if (!level.isServerLevel())
+  //     return; 
+  //   if (level.getObjectID(x, y) == 0 && 
+  //     GameRandom.globalRandom.getChance(growChance)) {
+  //     GameObject grass = ObjectRegistry.getObject(ObjectRegistry.getObjectID("corruptgrass"));
+  //     if (grass.canPlace(level, x, y, 0) == null) {
+  //       grass.placeObject(level, x, y, 0);
+  //       level.sendObjectUpdatePacket(x, y);
+  //     } 
+  //   } 
+  // }
   
   public Point getTerrainSprite(GameTextureSection terrainTexture, Level level, int tileX, int tileY) {
     int tile;

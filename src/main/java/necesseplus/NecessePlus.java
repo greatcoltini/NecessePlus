@@ -54,7 +54,6 @@ public class NecessePlus {
         ObjectRegistry.registerObject("corrupttree", (GameObject)new TreeObject("corrupttree", "corruptlog", "corruptsapling", new Color(203, 195, 227), 45, 60, 110, "corruptleaves"), 0.0F, false);
 
         // 3 register biome
-
         BiomeRegistry.registerBiome("corruptionbiome", new CorruptionBiome(), 600, "forest");
 
         // 4 register buffs
