@@ -80,15 +80,24 @@ public class Eater extends FlyingHostileMob {
         int drawY = camera.getDrawY(y) - 51;
 
         // A helper method to get the sprite of the current animation/direction of this mob
-        Point sprite = getAnimSprite(x, y, dir);
+        int sprite;
+        long time = level.getWorldEntity().getTime() % 350L;
+        if (time < 100L) {
+        sprite = 0;
+        } else if (time < 200L) {
+        sprite = 1;
+        } else {
+        sprite = 2;
+        } 
 
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
         DrawOptions drawOptions = texture.initDraw()
-                .sprite(sprite.x, sprite.y, 64)
+                .sprite(sprite, 0, 64)
                 .light(light)
-                .pos(drawX, drawY);
+                .pos(drawX, drawY)
+                .rotate(this.dir);
 
         list.add(new MobDrawable() {
             @Override

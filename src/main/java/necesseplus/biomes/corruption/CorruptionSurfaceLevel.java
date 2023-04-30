@@ -33,7 +33,7 @@ public class CorruptionSurfaceLevel extends Level {
   }
   
   public void generateLevel(float islandSize) {
-    int size = (int)(islandSize * 200.0F) + 20;
+    int size = (int)(islandSize * 100.0F) + 100;
     IslandGeneration ig = new IslandGeneration(this, size);
     int waterTile = TileRegistry.getTileID("watertile");
     int sandTile = TileRegistry.getTileID("corruptsandtile");
@@ -62,11 +62,11 @@ public class CorruptionSurfaceLevel extends Level {
     GameEvents.triggerEvent((GameEvent)new GeneratedIslandFloraEvent(this, islandSize, ig));
     GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandStructuresEvent(this, islandSize, ig), e -> GenerationTools.spawnRandomPreset(this, (Preset)new RandomRuinsPreset(ig.random), false, false, ig.random, false, 40, 2));
     GameEvents.triggerEvent((GameEvent)new GeneratedIslandStructuresEvent(this, islandSize, ig));
-    GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandAnimalsEvent(this, islandSize, ig), e -> {
-          ig.spawnMobHerds("sheep", ig.random.getIntBetween(25, 50), grassTile, 2, 6, islandSize);
-          ig.spawnMobHerds("cow", ig.random.getIntBetween(15, 40), grassTile, 2, 6, islandSize);
-        });
-    GameEvents.triggerEvent((GameEvent)new GeneratedIslandAnimalsEvent(this, islandSize, ig));
+    // GameEvents.triggerEvent((PreventableGameEvent)new GenerateIslandAnimalsEvent(this, islandSize, ig), e -> {
+    //       ig.spawnMobHerds("sheep", ig.random.getIntBetween(25, 50), grassTile, 2, 6, islandSize);
+    //       ig.spawnMobHerds("cow", ig.random.getIntBetween(15, 40), grassTile, 2, 6, islandSize);
+    //     });
+    // GameEvents.triggerEvent((GameEvent)new GeneratedIslandAnimalsEvent(this, islandSize, ig));
     GenerationTools.checkValid(this);
   }
 }

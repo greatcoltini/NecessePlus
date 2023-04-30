@@ -42,7 +42,6 @@ public class NecessePlus {
         // 1 Register tiles
         TileRegistry.registerTile("corruptgrasstile", (GameTile)new CorruptGrassTile(), 0.0F, false);
         TileRegistry.registerTile("corruptsandtile", (GameTile)new CorruptSandTile(), 0.0F, false);
-                
 
         // 2 Register out objects
         ObjectRegistry.registerObject("spiderqueentrophyobject", new SpiderQueenTrophyObject(), 200, true);
